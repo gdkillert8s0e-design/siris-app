@@ -532,12 +532,10 @@
             const btn = event.target;
             
             if (currentEffect === effect) {
-                // Выключаем эффект
                 currentEffect = null;
                 btn.classList.remove('active');
                 stopEffect();
             } else {
-                // Включаем новый эффект
                 document.querySelectorAll('.effect-btn').forEach(b => b.classList.remove('active'));
                 currentEffect = effect;
                 btn.classList.add('active');
@@ -722,7 +720,6 @@
             }
         }
 
-        // События
         sendBtn.addEventListener('click', sendMessage);
         messageInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
@@ -730,7 +727,6 @@
             }
         });
 
-        // Telegram WebApp кнопка
         tg.MainButton.text = "Отправить";
         tg.MainButton.onClick(() => {
             sendMessage();
@@ -744,7 +740,6 @@
             }
         });
 
-        // Загрузка сохраненных настроек
         window.addEventListener('load', () => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             const savedEffect = localStorage.getItem('effect');
